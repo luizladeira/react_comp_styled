@@ -26,7 +26,7 @@ const MainContainer = styled.main`
 const ConteudoGaleria = styled.section`
   display:flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-grow: 1; 
 `
 
 
