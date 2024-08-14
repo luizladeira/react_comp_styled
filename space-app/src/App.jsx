@@ -5,11 +5,15 @@ import Cabecalho from "./assets/componentes/Cabecalho";
 import EstilosGlobais from "./assets/componentes/EstilosGlobais";
 import Galeria from "./assets/componentes/Galeria";
 import backgroundImage from '/imagens/banner.png';
+import fotos from '../json/fotos.json';
+import { useState } from "react";
+
 
 const FundoGradiante = styled.div`
 background: linear-gradient(174.61deg, #041833 4.16%, #04244F 48%, #154580 96.76%);
 width: 100%;
 min-height: 100vh;
+
 `
 
 const AppContainer = styled.div`
@@ -30,7 +34,10 @@ const ConteudoGaleria = styled.section`
 `
 
 
-function App() {
+const App = () => {
+
+  const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos);
+
   return (
     <FundoGradiante>
       <EstilosGlobais />
@@ -40,7 +47,7 @@ function App() {
           <BarraLateral />
           <ConteudoGaleria>
             <Banner texto="A galeria mais completa de fotos" backgroundImage={backgroundImage} />
-            <Galeria />
+            <Galeria fotos={fotosDaGaleria} />
           </ConteudoGaleria>
         </MainContainer>
       </AppContainer>

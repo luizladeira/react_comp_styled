@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import tags from './Json/tags.json'
 
 
-const TagsEstilizado = styled.section `
+const TagsEstilizado = styled.section`
     display: flex;
     gap: 60px;
     align-items: center;
@@ -12,11 +12,11 @@ const TagsEstilizado = styled.section `
     font-weight: 400;
 `;
 
-const BatoesTags = styled.div `
+const BotoesTags = styled.div`
     display: flex;
     gap: 10px;
 `
-const BotaoTag = styled.button `
+const BotaoTag = styled.button`
     background: rgba(255, 255, 255, 0.3);
     color: #ffffff;
     text-align: center;
@@ -34,9 +34,9 @@ const Tags = () => {
     return (
         <TagsEstilizado>
             <p>Busque por Tags:</p>
-            <BatoesTags >
+            <BotoesTags >
                 {tags.map(tag => <BotaoTag key={tag.id}>{tag.titulo}</BotaoTag>)}
-            </BatoesTags>
+            </BotoesTags>
         </TagsEstilizado>
     )
 }
