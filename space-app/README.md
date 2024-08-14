@@ -23,5 +23,5 @@ Já o SCSS é uma extensão do CSS que adiciona alguns recursos legais, como var
 
 Resumindo, CSS-in-JS é quando escrevemos os estilos dentro do JavaScript, permitindo mais dinamismo e estilos específicos para cada componente. Já o SCSS é uma extensão do CSS que adiciona recursos avançados, mas precisa ser convertido em CSS antes de ser usado pelo navegador.
 
-# D 
-Documentação da forma correta de usar a hierarquia dos elementos HTML, eu acesso a (documentação do Mozilla)[https://developer.mozilla.org/pt-BR/]
+# Documentação da Hierarquia dos elementos HTML 
+Documentação da forma correta de usar a hierarquia dos elementos HTML, eu acesso a [documentação do Mozilla](https://developer.mozilla.org/pt-BR/)
