@@ -25,3 +25,8 @@ Resumindo, CSS-in-JS é quando escrevemos os estilos dentro do JavaScript, permi
 
 # Documentação da Hierarquia dos elementos HTML 
 Documentação da forma correta de usar a hierarquia dos elementos HTML, eu acesso a [documentação do Mozilla](https://developer.mozilla.org/pt-BR/)
+
+
+# Qual é a finalidade dos métodos métodos map() e useEffect() no contexto do filtro de produtos?
+
+O método map() é usado para renderizar os elementos da lista de produtos, enquanto o useEffect() é usado para aplicar o filtro nos produtos quando ocorrerem mudanças no estado do filtro.

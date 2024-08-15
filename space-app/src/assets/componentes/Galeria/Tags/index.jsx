@@ -2,42 +2,53 @@ import { styled } from 'styled-components';
 import tags from './Json/tags.json'
 
 
-const TagsEstilizado = styled.section`
+const BarraTags = styled.div`
     display: flex;
-    gap: 60px;
     align-items: center;
+    gap: 64px;
+    margin-top: 56px;
+`
+const TituloTags = styled.p`
     color: #D9D9D9;
     font-size: 24px;
-    line-height: 28.8px;
-    font-weight: 400;
-`;
-
-const BotoesTags = styled.div`
-    display: flex;
-    gap: 10px;
+    margin: 0;
 `
-const BotaoTag = styled.button`
-    background: rgba(255, 255, 255, 0.3);
-    color: #ffffff;
-    text-align: center;
-    border-radius: 10px;
-    border: none;
-    padding: 10px 8px;
-    transition: background-color 0.3s ease;
+const Tag = styled.button`
+    font-size: 24px;
+    color: #FFFFFF;
+    background-color:rgba(217, 217, 217, 0.3);
     cursor: pointer;
-    &:hover {
-      border: 2px solid #C98CF1;
+    transition: background-color 0.3s ease;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-color: transparent;
+    &:hover{
+        border-color: #C98CF1;
     }
 `
+const BotoesTags = styled.div`
+    display: flex;
+    gap: 24px;
+    justify-content: end;
+`
 
-const Tags = () => {
+
+
+const Tags = ( {setTag}) => {
     return (
-        <TagsEstilizado>
-            <p>Busque por Tags:</p>
+        <BarraTags>
+            <TituloTags>Busque por Tags:</TituloTags>
             <BotoesTags >
-                {tags.map(tag => <BotaoTag key={tag.id}>{tag.titulo}</BotaoTag>)}
+                {tags.map(tag => <Tag key={tag.id} 
+                onClick={
+                    ()=> setTag(tag.tag)
+                }
+                >
+                    {tag.titulo}
+                    </Tag>)}
             </BotoesTags>
-        </TagsEstilizado>
+        </BarraTags>
     )
 }
 
