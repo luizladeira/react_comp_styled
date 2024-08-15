@@ -30,3 +30,7 @@ Documentação da forma correta de usar a hierarquia dos elementos HTML, eu aces
 # Qual é a finalidade dos métodos métodos map() e useEffect() no contexto do filtro de produtos?
 
 O método map() é usado para renderizar os elementos da lista de produtos, enquanto o useEffect() é usado para aplicar o filtro nos produtos quando ocorrerem mudanças no estado do filtro.
+
+# LINK DO PROJETO NO VERCEL
+
+[https://react-comp-styled.vercel.app/](https://react-comp-styled.vercel.app/)
