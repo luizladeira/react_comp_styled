@@ -1,20 +1,10 @@
 import { styled } from "styled-components"
-import iconeFavorito from "./favorito.svg"
-import iconeMaximizar from "./maximizar.svg"
-
-const FotoContainer = styled.div`
-    display: inline-flex;
-    gap: 10px;
-`
-
-const SecaoFluida = styled.section`
-    flex-grow: 1;
-`
+import BotaoIcone from "../../BotaoIcone"
 
 const Figure = styled.figure`
     width: ${props => props.$expandida ? '90%' : '460px'};
-    max-width: 90%;
-    margin: 0 0 15px 0; 
+    max-width: 100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
     & > img {
@@ -40,46 +30,28 @@ const Figure = styled.figure`
     }
 `
 
-const FonteEsterizada = styled.legend`
-display: flex;
-margin: 10px 0px 0px; 
-`
-
-const Fotter = styled.footer`
+const Rodape = styled.footer`
     display: flex;
-    float:right;
-    align-items: left;
+    justify-content: space-between;
+    align-items: center;
 `
 
-const ButtonFav = styled.button`
-    display: initial;
-    color:red;
-    padding:auto;
-    box-sizing: border-box;
-`
-
-
-const Imagem = ({ foto, titulo, path, fonte }) => {
-    return (
-        <FotoContainer>
-
-            <Figure>
-                <img src={foto} alt={titulo} title={titulo} />
-                <figcaption>
-                    <h3>{titulo}</h3>
-                    <FonteEsterizada>{fonte}</FonteEsterizada>
-                    <Fotter>
-                        <ButtonFav>
-                            <img src={iconeFavorito} />
-                        </ButtonFav>
-                        <ButtonFav>
-                            <img src={iconeMaximizar} />
-                        </ButtonFav>
-                    </Fotter>
-                </figcaption>
-            </Figure>
-        </FotoContainer>
-    )
+const Imagem = ({ foto, expandida = false, aoZoomSolicitado }) => {
+    return (<Figure $expandida={expandida} id={`foto-${foto.id}`}>
+        <img src={foto.path} alt={foto.alt} />
+        <figcaption>
+            <h3>{foto.titulo}</h3>
+            <Rodape>
+                <h4>{foto.fonte}</h4>
+                <BotaoIcone>
+                    <img src="/icones/favorito.png" alt="Icone de favorito" />
+                </BotaoIcone>
+                {!expandida && <BotaoIcone aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
+                    <img src="/icones/expandir.png" alt="Icone de expandir" />
+                </BotaoIcone>}
+            </Rodape>
+        </figcaption>
+    </Figure>)
 }
 
 export default Imagem
